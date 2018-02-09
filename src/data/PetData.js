@@ -4,8 +4,12 @@ const baseUrl = 'pets'
 
 class PetData {
   static create (pet) {
-    window.alert(`${baseUrl}/create`)
     return Data.post(`${baseUrl}/create`, pet, true)
+  }
+
+  static all (page) {
+    page = page || 1
+    return Data.get(`${baseUrl}/all?page=${page}`)
   }
 }
 

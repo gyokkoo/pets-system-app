@@ -8,12 +8,15 @@ const getOptions = () => ({
     'Content-Type': 'application/json'
   }
 })
+
 const handleJsonRespone = (res) => res.json()
+
 const applyAuthorizationHeader = (options, authenticated) => {
   if (authenticated) {
     options.headers.Authorization = `bearer ${Auth.getToken()}`
   }
 }
+
 class Data {
   static get (url, authenticated) {
     let options = getOptions()

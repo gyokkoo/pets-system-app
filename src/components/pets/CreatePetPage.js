@@ -3,6 +3,7 @@ import FormHelpers from '../common/forms/FormHelpers'
 import CreatePetForm from './CreatePetForm'
 import petActions from '../../actions/PetActions'
 import petStore from '../../stores/PetStore'
+import toastr from 'toastr'
 
 class CreatePetPage extends Component {
   constructor (props) {
@@ -43,7 +44,15 @@ class CreatePetPage extends Component {
   }
 
   handlePetCreation (data) {
-    console.log(data)
+    if (!data.success) {
+      let firstError = FormHelpers.getFirstError(data)
+      this.setState({
+        error: firstError
+      })
+    } else {
+      toastr.success(data.message)
+      this.props.history.push(`/pets/details/${data.pet.id}`)
+    }
   }
 
   render () {

@@ -38,15 +38,6 @@ class RegisterPage extends Component {
   handleUserChange (event) {
     const formChangeFunction = FormHelpers.handleFormChange.bind(this)
     formChangeFunction(event, 'user')
-    /*
-    const target = event.target
-    const field = target.name
-    const value = target.value
-
-    const user = this.state.user
-    user[field] = value
-    this.setState({ user })
-    */
   }
 
   handleUserForm (event) {
@@ -60,12 +51,7 @@ class RegisterPage extends Component {
 
   handleUserRegistration (data) {
     if (!data.success) {
-      let firstError = data.message
-      if (data.errors) {
-        firstError = Object
-          .keys(data.errors)
-          .map(k => data.errors[k])[0]
-      }
+      let firstError = FormHelpers.getFirstError(data)
       this.setState({
         error: firstError
       })
@@ -73,7 +59,6 @@ class RegisterPage extends Component {
       toastr.success(data.message)
       this.props.history.push('/users/login')
     }
-    console.log(data)
   }
 
   validateUser () {
