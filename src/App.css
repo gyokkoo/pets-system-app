@@ -32,6 +32,14 @@
   display: inline-block;
 }
 
+.petImage {
+  width: 150px
+}
+
+hr {
+  width: 40%;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

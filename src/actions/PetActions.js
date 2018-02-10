@@ -3,7 +3,8 @@ import dispatcher from '../dispatcher'
 const petActions = {
   types: {
     CREATE_PET: 'CREATE_PET',
-    ALL_PETS: 'ALL_PETS'
+    ALL_PETS: 'ALL_PETS',
+    PET_DETAILS: 'PET_DETAILS'
   },
   create (pet) {
     dispatcher.dispatch({

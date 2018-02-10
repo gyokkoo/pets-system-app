@@ -11,11 +11,11 @@ class CreatePetPage extends Component {
 
     this.state = {
       pet: {
-        name: 'Tomi',
-        age: 4,
-        type: 'Cat',
-        image: 'http://r.ddmcdn.com/s_f/o_1/cx_0/cy_0/cw_300/ch_300/w_300/APL/uploads/2014/10/kitten-cuteness300.jpg',
-        breed: 'Street'
+        name: '',
+        age: 0,
+        type: '',
+        image: '',
+        breed: ''
       },
       error: ''
     }
