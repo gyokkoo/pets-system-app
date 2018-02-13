@@ -9,27 +9,23 @@ const RegisterForm = (props) => (
       type='email'
       placeholder='E-mail'
       value={props.user.email}
-      onChange={props.onChange}
-    />
-    <label htmlFor='password'>Password</label>
-    <input
-      type='password'
+      onChange={props.onChange} />
+    <br />
+    <Input
       name='password'
+      type='password'
       placeholder='Password'
       value={props.user.password}
       onChange={props.onChange} />
     <br />
-    <label htmlFor='confirmPassword'>Confirm Password</label>
-    <input
-      type='password'
+    <Input
       name='confirmPassword'
+      type='password'
       placeholder='Confirm Password'
       value={props.user.confirmPassword}
       onChange={props.onChange} />
     <br />
-    <label htmlFor='name'>Name</label>
-    <input
-      type='text'
+    <Input
       name='name'
       placeholder='Name'
       value={props.user.name}

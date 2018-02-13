@@ -4,7 +4,6 @@ import Auth from '../users/Auth'
 import userStore from '../../stores/UserStore'
 
 class Navbar extends Component {
-
   constructor (props) {
     super(props)
 
@@ -26,23 +25,33 @@ class Navbar extends Component {
   }
 
   render () {
+    let navbarLinks = ''
+    if (Auth.isUserAuthenticated()) {
+      navbarLinks =
+        <ul className='nav navbar-nav center '>
+          <li><Link to='/pets-system-app/pets/add'>Add Pet</Link></li>
+          <li><a>{this.state.username}</a></li>
+          <li><Link to='/pets-system-app/users/logout'>Logout</Link></li>
+        </ul>
+    } else {
+      navbarLinks =
+        <ul className='nav navbar-nav center '>
+          <li><Link to='/pets-system-app/users/register'>Register</Link></li>
+          <li><Link to='/pets-system-app/users/login'>Login</Link></li>
+        </ul>
+    }
+
     return (
-      <div className='menu'>
-        <Link to='/'>Home</Link>
-        { Auth.isUserAuthenticated() ? (
-          <div>
-            <Link to='/pets/add'>Add Pet</Link>
-            <span>{this.state.username}</span>
-            <Link to='/users/logout'>Logout</Link>
+      <nav className='navbar navbar-default'>
+        <div className='container-fluid'>
+          <div className='navbar-header'>
+            <Link to='/pets-system-app/' className='navbar-brand'>Pets Project</Link>
           </div>
-        ) : (
-          <div>
-            <Link to='/users/register'>Register</Link>
-            <Link to='/users/login'>Login</Link>
-          </div>
-        ) }
-      </div>
+          {navbarLinks}
+        </div>
+      </nav>
     )
   }
 }
+
 export default Navbar

@@ -10,10 +10,11 @@ import CreatePetPage from '../../pets/CreatePetPage'
 const Routes = () => (
   <Switch>
     <Route path='/' exact component={ListPetsPage} />
-    <Route path='/users/register' component={RegisterPage} />
-    <Route path='/users/login' component={LoginPage} />
-    <PrivateRoute path='/users/logout' component={LogoutPage} />
-    <PrivateRoute path='/pets/add' component={CreatePetPage} />
+    <Route path='/pets-system-app' exact component={ListPetsPage} />
+    <Route path='/pets-system-app/users/register' component={RegisterPage} />
+    <Route path='/pets-system-app/users/login' component={LoginPage} />
+    <PrivateRoute path='/pets-system-app/users/logout' component={LogoutPage} />
+    <PrivateRoute path='/pets-system-app/pets/add' component={CreatePetPage} />
   </Switch>
 )
 

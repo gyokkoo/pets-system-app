@@ -12,8 +12,8 @@ class LoginPage extends Component {
 
     this.state = {
       user: {
-        email: 'test@test.com',
-        password: '123456'
+        email: '',
+        password: ''
       },
       error: ''
     }
@@ -51,7 +51,7 @@ class LoginPage extends Component {
       Auth.authenticateUser(data.token)
       Auth.saveUser(data.user)
       toastr.success(data.message)
-      this.props.history.push('/')
+      this.props.history.push('/pets-system-app/')
     }
   }
 

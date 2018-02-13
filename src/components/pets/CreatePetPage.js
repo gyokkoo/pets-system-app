@@ -44,6 +44,7 @@ class CreatePetPage extends Component {
   }
 
   handlePetCreation (data) {
+    console.log(data)
     if (!data.success) {
       let firstError = FormHelpers.getFirstError(data)
       this.setState({

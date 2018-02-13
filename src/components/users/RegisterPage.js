@@ -12,11 +12,10 @@ class RegisterPage extends Component {
 
     this.state = {
       user: {
-        // For testing, must be empty in production
-        email: 'test@test.com',
-        password: '123456',
-        confirmPassword: '123456',
-        name: 'Test'
+        email: '',
+        password: '',
+        confirmPassword: '',
+        name: ''
       },
       error: ''
     }
@@ -57,7 +56,7 @@ class RegisterPage extends Component {
       })
     } else {
       toastr.success(data.message)
-      this.props.history.push('/users/login')
+      this.props.history.push('/pets-system-app/users/login')
     }
   }
 

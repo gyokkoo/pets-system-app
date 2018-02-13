@@ -34,11 +34,13 @@ const createPetForm = (props) => (
         <option value='Other'>Other</option>
       </select>
     </div>
+    <br />
     <Input
       name='breed'
       placeholder='Breed'
       value={props.pet.breed}
       onChange={props.onChange} />
+    <br />
     <input type='submit' onClick={props.onSave} />
   </form>
 )
