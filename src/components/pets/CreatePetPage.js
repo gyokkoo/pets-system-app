@@ -52,7 +52,7 @@ class CreatePetPage extends Component {
       })
     } else {
       toastr.success(data.message)
-      this.props.history.push(`/pets/details/${data.pet.id}`)
+      this.props.history.push(`/pets-system-app/pets/details/${data.pet.id}`)
     }
   }
 

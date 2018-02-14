@@ -4,7 +4,6 @@ import queryString from 'query-string'
 import petActions from '../../actions/PetActions'
 import petStore from '../../stores/PetStore'
 
-
 class ListPetsPage extends Component {
   constructor (props) {
     super(props)
@@ -86,7 +85,7 @@ class ListPetsPage extends Component {
         <div key={pet.id}>
           <img className='petImage' src={pet.image} alt={'img'} />
           <br />
-          <Link to={`/pets/details/${pet.id}`}>
+          <Link to={`/pets-system-app/pets/details/${pet.id}`}>
             {pet.id} - {pet.name}
           </Link>
           <hr />

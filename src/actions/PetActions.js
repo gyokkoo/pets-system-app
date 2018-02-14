@@ -18,6 +18,12 @@ const petActions = {
       type: this.types.ALL_PETS,
       page
     })
+  },
+  getById (id) {
+    dispatcher.dispatch({
+      type: this.types.PET_DETAILS,
+      id
+    })
   }
 }
 
