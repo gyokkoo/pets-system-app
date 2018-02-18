@@ -7,6 +7,7 @@ import LogoutPage from '../../users/LogoutPage'
 import RegisterPage from '../../users/RegisterPage'
 import CreatePetPage from '../../pets/CreatePetPage'
 import PetDetailsPage from '../../pets/PetDetailsPage'
+import CreateCommentPage from '../../pets/CreateCommentPage'
 
 const Routes = () => (
   <Switch>
@@ -17,6 +18,7 @@ const Routes = () => (
     <PrivateRoute path='/pets-system-app/users/logout' component={LogoutPage} />
     <PrivateRoute path='/pets-system-app/pets/add' component={CreatePetPage} />
     <PrivateRoute path='/pets-system-app/pets/add' component={CreatePetPage} />
+    <PrivateRoute path='/pets-system-app/pets/:id/comments/create' component={CreateCommentPage} />
     <PrivateRoute path='/pets-system-app/pets/details/:id' component={PetDetailsPage} />
   </Switch>
 )

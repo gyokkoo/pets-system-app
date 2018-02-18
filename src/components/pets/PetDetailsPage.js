@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import petActions from '../../actions/PetActions'
 import petStore from '../../stores/PetStore'
 
@@ -38,6 +39,16 @@ class PetDetailsPage extends Component {
   }
 
   render () {
+    let comments = ''
+    if (this.state.comments.length === 0) {
+      comments = 'No comments!'
+    } else {
+      comments = this.state.comments.map(comment => (
+        <div key={comment.id}>
+          comment.message
+        </div>
+      ))
+    }
     return (
       <div className='container'>
         <div className='row'>
@@ -51,8 +62,10 @@ class PetDetailsPage extends Component {
             <p>Breed: {this.state.pet.type}</p>
           </div>
           <div className='container'>
-            Comments:
-            Coming soon!
+            <div>Comments:</div>
+            {comments}
+            <br />
+            <Link to={`/pets-system-app/pets/${this.state.pet.id}/comments/create`}>Add comment</Link>
           </div>
         </div>
       </div>

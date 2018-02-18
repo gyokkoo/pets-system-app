@@ -29,6 +29,7 @@ class Navbar extends Component {
     if (Auth.isUserAuthenticated()) {
       navbarLinks =
         <ul className='nav navbar-nav center '>
+          <li><Link to='/pets-system-app/'>All Pets</Link></li>
           <li><Link to='/pets-system-app/pets/add'>Add Pet</Link></li>
           <li><a>{this.state.username}</a></li>
           <li><Link to='/pets-system-app/users/logout'>Logout</Link></li>
