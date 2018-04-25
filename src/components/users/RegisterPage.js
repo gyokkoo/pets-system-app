@@ -6,7 +6,6 @@ import userStore from '../../stores/UserStore'
 import toastr from 'toastr'
 
 class RegisterPage extends Component {
-
   constructor (props) {
     super(props)
 

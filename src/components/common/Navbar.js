@@ -36,7 +36,7 @@ class Navbar extends Component {
         </ul>
     } else {
       navbarLinks =
-        <ul className='nav navbar-nav center '>
+        <ul className='nav navbar-nav'>
           <li><Link to='/pets-system-app/users/register'>Register</Link></li>
           <li><Link to='/pets-system-app/users/login'>Login</Link></li>
         </ul>
